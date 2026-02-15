@@ -1,0 +1,520 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Reset básico para consistencia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* Container general */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, #007bff 0%, #6610f2 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.menu {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo-img {
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-icono {
+    width: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.menu-icono:hover {
+    transform: scale(1.1);
+}
+
+#menu {
+    display: none;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.navbar a {
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar a:hover {
+    color: #e9ecef;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.header-content h1 {
+    font-size: 3.5em;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-content p {
+    font-size: 1.3em;
+    font-weight: 400;
+    margin-bottom: 25px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.header-content .btn {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #007bff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-content .btn:hover {
+    background-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* MAIN CONTENT */
+main {
+    padding: 50px 0;
+    background-color: white;
+}
+
+/* Sección de Beneficios */
+.beneficios {
+    margin-bottom: 50px;
+}
+
+.beneficios h2 {
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+.beneficios .card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.beneficios .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.beneficios .card-body i {
+    color: #007bff;
+}
+
+/* Triple Grid */
+.triple-grid {
+    margin-bottom: 50px;
+}
+
+.metodologia-content {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.metodologia-content:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.metodologia-content h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.metodologia-content img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* Imagen Content */
+.imagen-content img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor Secciones */
+.contenedor-secciones {
+    margin-bottom: 50px;
+}
+
+.documentacion iframe,
+.proyecto img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* MER Content */
+.mer-content img {
+    max-width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* FORMULARIO */
+#Llena-tu-informacion {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.title h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.title p {
+    color: #666;
+}
+
+.form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form input,
+.form textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form input:focus,
+.form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.form button {
+    background: linear-gradient(135deg, #007bff, #6610f2);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* SECCIÓN DE INTEGRANTES */
+/* INTEGRANTES FIX DEFINITIVO */
+
+.integrantes-grid {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+}
+
+/* TARJETA */
+
+.integrante-card {
+
+    transition: all 0.3s ease;
+
+}
+
+.integrante-card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+
+}
+
+
+/* IMAGEN PROPORCIONAL */
+
+.integrante-card img {
+
+    width: 100%;
+
+    height: 320px;
+
+    object-fit: cover;
+
+}
+
+
+/* CENTRAR CUANDO HAY 5 */
+
+@media (min-width: 992px) {
+
+.integrantes-grid {
+
+    justify-content: center;
+
+}
+
+}
+
+/* HERO HEADER IGUAL AL INDEX */
+
+.hero-header {
+
+    height: 500px;
+
+    background: linear-gradient(
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ),
+    url("../images/background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+.hero-overlay {
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+}
+
+
+/* NAV */
+
+.hero-nav {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 20px 40px;
+
+}
+
+
+.hero-logo {
+
+    width: 60px;
+
+}
+
+
+/* MENU */
+
+.hero-menu a {
+
+    color: white;
+
+    margin-left: 20px;
+
+    font-weight: 600;
+
+}
+
+
+/* TEXTO */
+
+.hero-content {
+
+    text-align: center;
+
+    color: white;
+
+    margin-bottom: 120px;
+
+}
+
+
+.hero-content h1 {
+
+    font-size: 60px;
+
+}
+
+
+.hero-content p {
+
+    font-size: 20px;
+
+}
+
+
+/* FOOTER */
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer a {
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.footer span {
+    display: block;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .navbar ul {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #007bff, #6610f2);
+        flex-direction: column;
+        padding: 20px 0;
+        display: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #menu:checked + label + .navbar ul {
+        display: flex;
+    }
+
+    .menu-icono {
+        display: block;
+    }
+
+    .header-content h1 {
+        font-size: 2.5em;
+    }
+
+    .header-content p {
+        font-size: 1.1em;
+    }
+
+    .triple-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .integrantes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 2em;
+    }
+
+    .form {
+        padding: 0 20px;
+    }
+}
