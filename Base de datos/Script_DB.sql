@@ -15,36 +15,37 @@ CREATE TABLE IF NOT EXISTS cliente(
 	fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- TABLA CREDENCIAL
 
-CREATE TABLE IF NOT EXISTS credencial(
-	id_credencial INT AUTO_INCREMENT PRIMARY KEY,
-	nombre VARCHAR(200) NOT NULL,
-	contrasena VARCHAR(200) NOT NULL,
-	email VARCHAR(200) NOT NULL UNIQUE,
-	fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
 
 -- TABLA USUARIO
 
-CREATE TABLE IF NOT EXISTS usuario(
+CREATE TABLE IF NOT EXISTS usuario (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    id_credencial INT NOT NULL,
     fecha_nacimiento DATE,
     rol VARCHAR(200),
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- TABLA CREDENCIAL
+
+CREATE TABLE IF NOT EXISTS credencial(
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(200) NOT NULL,
+    contrasena VARCHAR(200) NOT NULL,
+    email VARCHAR(200) NOT NULL UNIQUE,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
+        ON UPDATE CURRENT_TIMESTAMP,
 
     CONSTRAINT fk_usuario_credencial
-        FOREIGN KEY (id_credencial)
-        REFERENCES credencial(id_credencial)
+        FOREIGN KEY (id_usuario)
+        REFERENCES usuario(id_usuario)
         ON UPDATE CASCADE
-        ON DELETE CASCADE,
-
-    -- Clave ÚNICA para forzar 1:1
-    CONSTRAINT uq_usuario_id_credencial UNIQUE (id_credencial)
+        ON DELETE CASCADE
 );
+
+
 
 
 -- TABLA PROYECTO
