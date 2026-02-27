@@ -29,19 +29,23 @@ CREATE TABLE IF NOT EXISTS credencial(
 -- TABLA USUARIO
 
 CREATE TABLE IF NOT EXISTS usuario(
-	id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-	id_credencial INT NOT NULL,
-	fecha_nacimiento DATE,
-	rol VARCHAR(200),
-	fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    id_credencial INT NOT NULL,
+    fecha_nacimiento DATE,
+    rol VARCHAR(200),
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-	CONSTRAINT fk_usuario_credencial
-	FOREIGN KEY (id_credencial)
-	REFERENCES credencial(id_credencial)
-	ON UPDATE CASCADE
-	ON DELETE CASCADE
+    CONSTRAINT fk_usuario_credencial
+        FOREIGN KEY (id_credencial)
+        REFERENCES credencial(id_credencial)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+
+    -- Clave ÚNICA para forzar 1:1
+    CONSTRAINT uq_usuario_id_credencial UNIQUE (id_credencial)
 );
+
 
 -- TABLA PROYECTO
 
@@ -83,9 +87,7 @@ CREATE TABLE IF NOT EXISTS proyecto(
 CREATE TABLE IF NOT EXISTS plantilla(
 
 	id_plantilla INT AUTO_INCREMENT PRIMARY KEY,
-
 	nombre VARCHAR(200) NOT NULL,
-
 	descripcion TEXT,
 
 	tipo ENUM(
