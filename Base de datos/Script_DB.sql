@@ -1,13 +1,10 @@
--- ============================================
+
 -- BASE DE DATOS (opcional)
--- ============================================
 
 -- CREATE DATABASE IF NOT EXISTS Vitrio;
 -- USE Vitrio;
 
--- ============================================
 -- TABLA CLIENTE
--- ============================================
 
 CREATE TABLE IF NOT EXISTS cliente(
 	id_cliente INT AUTO_INCREMENT PRIMARY KEY,
@@ -19,9 +16,7 @@ CREATE TABLE IF NOT EXISTS cliente(
     fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- ============================================
 -- TABLA PROYECTO
--- ============================================
 
 CREATE TABLE IF NOT EXISTS proyecto(
 
@@ -57,9 +52,7 @@ CREATE TABLE IF NOT EXISTS proyecto(
 );
 
 
--- ============================================
 -- TABLA ARCHIVO
--- ============================================
 
 CREATE TABLE IF NOT EXISTS archivo(
 
@@ -90,9 +83,7 @@ CREATE TABLE IF NOT EXISTS archivo(
 );
 
 
--- ============================================
 -- TABLA USUARIO
--- ============================================
 
 CREATE TABLE IF NOT EXISTS usuario(
 
@@ -108,9 +99,7 @@ CREATE TABLE IF NOT EXISTS usuario(
 );
 
 
--- ============================================
 -- TABLA PROYECTO_USUARIO
--- ============================================
 
 CREATE TABLE IF NOT EXISTS proyecto_usuario(
 
